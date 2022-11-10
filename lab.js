@@ -19,18 +19,18 @@ let dog = {
   name: "Brigham",
   color: "Gray",
   age: 3,
-  goodBoy: True,
+  goodBoy: true,
 };
 
 //////////////////////////// PROBLEM 3 ////////////////////////////
 /* Print out the name of the dog you created in problem 2 using dot-notation. */
 
-//Code here
+console.log(dog.name);
 
 //////////////////////////// PROBLEM 4 ////////////////////////////
 /* Print out the color of the dog you created in problem 2 using bracket-notation. */
 
-//Code here
+console.log(dog["color"]);
 
 //////////////////////////// PROBLEM 5 ////////////////////////////
 /*
@@ -38,13 +38,23 @@ let dog = {
   Have the values to those keys be strings that are equal to your favorite thing in that category.
 */
 
-//Code here
+let favoriteThings = {
+  band: "Reliant K",
+  food: "Burgers",
+  person: "wife",
+  book: "Harry Potter",
+  movie: "Pink Panther",
+  holiday: "Christmas",
+};
 
 /*
   After you've made your object, use bracket or dot notation to add another key named 'car' with the value being your favorite car and then another key named 'show' with the value being your favorite show.
 */
 
-//Code here
+favoriteThings.car = "Tesla";
+favoriteThings.show = "Brooklyn Nine-Nine";
+
+console.log(favoriteThings);
 
 /*
   Now use bracket or dot notation to change the value of the food key in your favoriteThings object to be 'Chicken Nuggets'
@@ -56,7 +66,7 @@ let dog = {
 //////////////////////////// PROBLEM 6 ////////////////////////////
 
 // Do not edit the code below.
-var carDetails = {
+let carDetails = {
   color: "red",
   make: "toyota",
   model: "tacoma",
@@ -68,7 +78,8 @@ var carDetails = {
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
 
-//Code Here
+// const { color, make, model, year } = myCar;
+// console.log(car);
 
 //////////////////////////// PROBLEM 7 ////////////////////////////
 
@@ -78,14 +89,14 @@ var carDetails = {
   The property names are firstName, lastName, and title.
 */
 
-function greeting(obj) {
-  //Code Here
+const greeting = (obj) => {
+  const { title, firstName, lastName } = obj;
 
   // Do not edit the code below.
   return "Hello, " + title + " " + firstName + " " + lastName + "!";
   // Do not edit the code above.
-}
-
+};
+greeting([Superior, Bob, Barker]);
 //////////////////////////// PROBLEM 8 ////////////////////////////
 
 /*
