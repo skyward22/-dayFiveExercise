@@ -96,7 +96,7 @@ const greeting = (obj) => {
   return "Hello, " + title + " " + firstName + " " + lastName + "!";
   // Do not edit the code above.
 };
-greeting([Superior, Bob, Barker]);
+console.log(greeting(["Superior", "Bob", "Barker"]));
 //////////////////////////// PROBLEM 8 ////////////////////////////
 
 /*
@@ -107,7 +107,10 @@ greeting([Superior, Bob, Barker]);
   Sum up the values and return the total number.
 */
 
-//Code Here
+const totalPopulation = (obj) => {
+  const { utah, texas, arizona, california } = obj;
+  return utah + texas + arizona + california;
+};
 
 //////////////////////////// PROBLEM 9 ////////////////////////////
 
@@ -119,7 +122,10 @@ greeting([Superior, Bob, Barker]);
   Push these new variables to an array and return the array. 
 */
 
-//Code Here
+const ingredients = (obj) => {
+  const { carb, fat, arizona, california } = obj;
+  return [car, fat, protein];
+};
 
 //////////////////////////// PROBLEM 10 ////////////////////////////
 // Do not edit the code below.
@@ -139,7 +145,8 @@ var user = {
   Make that change without modifying the original object code above.
 */
 
-//Code Here
+user.name = "Bryan G. Smith";
+user.email = "bryan.smith@devmouta.in";
 
 //////////////////////////// PROBLEM 11 ////////////////////////////
 /*
