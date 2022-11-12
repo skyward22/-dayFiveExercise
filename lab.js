@@ -78,8 +78,8 @@ let carDetails = {
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
 
-// const { color, make, model, year } = myCar;
-// console.log(car);
+const { color, make, model, year } = carDetails;
+console.log(color);
 
 //////////////////////////// PROBLEM 7 ////////////////////////////
 
@@ -89,11 +89,11 @@ let carDetails = {
   The property names are firstName, lastName, and title.
 */
 
-const greeting = (obj) => {
-  const { title, firstName, lastName } = obj;
+const greeting = (intro) => {
+  const { title, firstName, lastName } = intro;
 
   // Do not edit the code below.
-  return "Hello, " + title + " " + firstName + " " + lastName + "!";
+  return `Hello, ${title}  ${firstName} ${lastName}!`;
   // Do not edit the code above.
 };
 console.log(greeting(["Superior", "Bob", "Barker"]));
@@ -108,7 +108,7 @@ console.log(greeting(["Superior", "Bob", "Barker"]));
 */
 
 const totalPopulation = (obj) => {
-  const { utah, texas, arizona, california } = obj;
+  let { utah, texas, arizona, california } = obj;
   return utah + texas + arizona + california;
 };
 
@@ -123,7 +123,7 @@ const totalPopulation = (obj) => {
 */
 
 const ingredients = (obj) => {
-  const { carb, fat, arizona, california } = obj;
+  let { carb, fat, arizona, california } = obj;
   return [car, fat, protein];
 };
 
@@ -153,7 +153,8 @@ user.email = "bryan.smith@devmouta.in";
   Using the user object above, delete the users age off of the object.
 */
 
-//Code Here
+delete user.age;
+console.log(user);
 
 //////////////////////////// PROBLEM 12 ////////////////////////////
 /*
@@ -162,7 +163,16 @@ user.email = "bryan.smith@devmouta.in";
   Print the name of your cat instance using dot notation.
 */
 
-//Code here
+class Cat {
+  constructor(name, age, color) {
+    this.name = name;
+    this.age = age;
+    this.color = color;
+  }
+}
+
+const newCat = new Cat("Meow", 5, "blue");
+console.log(newCat.name);
 
 //////////////////////////// PROBLEM 13 ////////////////////////////
 /*
@@ -172,7 +182,20 @@ user.email = "bryan.smith@devmouta.in";
   Call the castSpell function on the instance of your wizard.
 */
 
-//Code here
+class Wizard {
+  constructor(name, age, favoriteSpell) {
+    this.name = name;
+    this.age = age;
+    this.favoriteSpell = favoriteSpell;
+  }
+  castSpell = () => {
+    console.log(`${this.name} has cast ${this.favoriteSpell}`);
+  };
+}
+
+const harry = new Wizard("Harry", 17, "Lumos");
+
+harry.castSpell();
 
 //////////////////////////// PROBLEM 14 ////////////////////////////
 /*
@@ -197,7 +220,25 @@ user.email = "bryan.smith@devmouta.in";
     to be newPrice.
 */
 
-//Code Here
+class Phone {
+  constructor(brand, model, storage, color, price, sold) {
+    this.brand = brand;
+    this.model = model;
+    this.storage = storage;
+    this.color = color;
+    this.price = price;
+    this.sold = false;
+  }
+
+  sell = () => {
+    this.sold = true;
+    console.log(`${this.brand} ${this.model} has been sold.`);
+  };
+
+  changePrice(newPrice) {
+    this.price = newPrice;
+  }
+}
 
 /*
     Next make three new phone instances using your class.
@@ -209,7 +250,9 @@ user.email = "bryan.smith@devmouta.in";
     - price: number
 */
 
-//Code Here
+let phoneOne = new Phone("Apple", "iPhone", 256, "starlight", 600);
+let phoneTwo = new Phone("Samsung", "Galaxy", 512, "blue", 550);
+let phoneThree = new Phone("Google", "Google Beast", 128, "black", 650);
 
 /* 
   Call the changePrice function on one of your phones, 
@@ -218,7 +261,9 @@ user.email = "bryan.smith@devmouta.in";
   Then console.log that object to see the price change
 */
 
-//Code Here
+phoneOne.changePrice(900);
+
+console.log(phoneOne);
 
 /*
   Now call the sell method on one of your other phone objects
@@ -226,7 +271,9 @@ user.email = "bryan.smith@devmouta.in";
   Print the value of that phone's sell property to make sure it's been changed to true
 */
 
-//Code Here
+phoneTwo.sell();
+
+console.log(phoneThree.sold);
 
 //////////////////////////// PROBLEM 15 ////////////////////////////
 
